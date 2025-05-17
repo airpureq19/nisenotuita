@@ -128,17 +128,17 @@ body {
   color: #657786;
 }
 .twitter__icon .twitter-bubble {
-  background: url("svg/twitter-bubble.svg") no-repeat center;
+  background: url("twitter-bubble.svg") no-repeat center;
   background-size: 16px 16px;
   padding-left: 25px;
 }
 .twitter__icon .twitter-loop {
-  background: url("svg/twitter-loop.svg") no-repeat center;
+  background: url("twitter-loop.svg") no-repeat center;
   background-size: 16px 16px;
   padding-left: 25px;
 }
 .twitter__icon .twitter-heart {
-  background: url("svg/twitter-heart.svg") no-repeat center;
+  background: url("twitter-heart.svg") no-repeat center;
   background-size: 16px 16px;
   padding-left: 25px;
 }
