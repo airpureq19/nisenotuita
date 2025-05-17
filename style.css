@@ -1,156 +1,177 @@
 @charset "UTF-8";
-/*/////////////////////////////////////////////////
-//twitter風チャット画面(会話方式)を記事に表示する方法
-/////////////////////////////////////////////////*/
-.twitter__container {
+
+/*----------------------------------------
+  ベーススタイル
+-----------------------------------------*/
+body {
+  margin: 0;
   padding: 0;
+  background: #e6ecf0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #14171a;
+}
+
+/* ツイッター風ヘッダー */
+.tweet-header {
+  background: #1da1f2;
+  padding: 10px 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.header-content {
+  display: flex;
+  align-items: center;
+}
+.header-logo {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url("logo.png") no-repeat center/cover;
+  margin-right: 10px;
+}
+.tweet-header h1 {
+  font-size: 1.5em;
+  margin: 0;
+  color: #fff;
+}
+
+/* メインツイートカード */
+.twitter__container {
   background: #ffffff;
-  overflow: hidden;
-  max-width: 400;
+  border: 1px solid #dce0e0;
+  border-radius: 8px;
   margin: 20px auto;
-  font-size: 80%;
-  border: solid 1px #eeeeee;
-}
-
-.twitter__container a {
-  color: #58aeed;
-}
-
-/* タイトル部分 */
-.twitter__container .twitter__title {
-  background: #58aeed;
-  padding: 10px;
-  text-align: center;
-  font-size: 150%;
-  color: #ffffff;
-}
-
-.twitter__container .twitter__title .twitter-logo {
-  margin: 0 auto;
-
-  display: block;
-  background: url() center no-repeat;
-}
-
-.twitter__container .twitter__title span {
-  font-size: 20px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
 /* タイムライン部分 */
-.twitter__container .twitter__contents {
-  overflow: hidden;
-  position: relative;
-  line-height: 135%;
+.twitter__contents {
+  max-height: 600px;
+  overflow-y: auto;
+  padding: 10px 0;
 }
 
-.twitter__container .twitter__contents.scroll {
-  height: 500px;
-  overflow-y: scroll;
+/* ツイートブロック */
+.twitter__block {
+  display: flex;
+  padding: 15px;
+  border-bottom: 1px solid #e1e8ed;
+}
+.twitter__block:last-child {
+  border-bottom: none;
 }
 
-.twitter__container .twitter__block {
-  width: 100%;
-  display: block;
-  padding: 10px;
-  margin-bottom: 5px;
-  border-bottom: solid 1px #eeeeee;
-  overflow: hidden;
-}
-
-.twitter__container .twitter__block:last-child {
-  border-bottom: solid 0px;
-}
-/* アイコン画像 */
-.twitter__container .twitter__block figure {
-  width: 50px;
-  padding: 0;
+/* プロフィール画像 */
+.twitter__block figure {
   margin: 0;
-  float: left;
-  width: 50px;
-}
-  /* 正方形を用意 */
-.twitter__container .twitter__block figure img {
-  border-radius: 50%;
+  flex-shrink: 0;
   width: 50px;
   height: 50px;
 }
-/* コメントエリア */
-.twitter__container .twitter__block-text {
-  margin: 0;
-  position: relative;
-  margin-left: 60px;
-  padding-right: 10px;
-}
-
-.twitter__container .twitter__block-text .name {
-  font-weight: bold;
-}
-
-.twitter__container .twitter__block-text .name .name_reply {
-  color: #8a9aa4;
-  margin-left: 10px;
-}
-
-.twitter__container .twitter__block-text .date {
-  position: absolute;
-  top: 0;
-  right: 20px;
-  text-align: right;
-  color: #8a9aa4;
-}
-/* 本文 */
-.twitter__container .twitter__block-text .text {
-  margin: 5px 0;
-}
-/* 画像を貼る場合 */
-.twitter__container .twitter__block-text .text .in-pict img {
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  margin: 5px 0;
-  width: 95%;
-  height: 200px;
+.twitter__block figure img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   object-fit: cover;
 }
 
-/*///////////////////////////////////////////
-//埋め込みアイコン
-////////////////////////////////////////////*/
-
-.twitter__container .twitter__icon br{
-  display: none;
+/* ツイートテキストエリア */
+.twitter__block-text {
+  margin-left: 10px;
+  width: 100%;
+}
+.tweet-header-text {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+.tweet-header-text .name {
+  font-weight: bold;
+  margin-right: 5px;
+}
+.tweet-header-text .name_reply {
+  color: #657786;
+  margin-right: 5px;
+}
+.tweet-header-text .date {
+  color: #657786;
 }
 
-.twitter__container .twitter__icon .twitter-bubble {
-  width: 14px;
-  height: 14px;
-  display: block;
-  padding-left: 20px;
-  background: url("svg/twitter-bubble.svg") left no-repeat;
-  width: 20%;
-  float: left;
-  color: #8a9aa4;
+/* ツイート本文 */
+.twitter__block-text .text {
+  font-size: 1em;
+  margin-bottom: 10px;
+  line-height: 1.4;
 }
 
-.twitter__container .twitter__icon .twitter-heart {
-  width: 14px;
-  height: 14px;
-  display: block;
-  padding-left: 20px;
-  background: url("svg/twitter-heart.svg") left no-repeat;
-  width: 20%;
-  float: left;
-  color: #8a9aa4;
+/* 添付画像 */
+.in-pict img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+  object-fit: cover;
 }
 
-.twitter__container .twitter__icon .twitter-loop {
-  width: 14px;
-  height: 14px;
-  display: block;
-  padding-left: 20px;
-  background: url("svg/twitter-loop.svg") left no-repeat;
-  width: 20%;
-  float: left;
-  color: #8a9aa4;
+/* ツイートアクション（アイコン） */
+.twitter__icon {
+  display: flex;
+  justify-content: space-between;
+  max-width: 250px;
+}
+.twitter__icon span {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  color: #657786;
+}
+.twitter__icon .twitter-bubble {
+  background: url("svg/twitter-bubble.svg") no-repeat center;
+  background-size: 16px 16px;
+  padding-left: 25px;
+}
+.twitter__icon .twitter-loop {
+  background: url("svg/twitter-loop.svg") no-repeat center;
+  background-size: 16px 16px;
+  padding-left: 25px;
+}
+.twitter__icon .twitter-heart {
+  background: url("svg/twitter-heart.svg") no-repeat center;
+  background-size: 16px 16px;
+  padding-left: 25px;
 }
 
+/* フッター */
+.tweet-footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 0.8em;
+  color: #657786;
+}
+
+/*----------------------------------------
+  レスポンシブ調整
+-----------------------------------------*/
+@media screen and (max-width: 600px) {
+  .tweet-header h1 {
+    font-size: 1.2em;
+  }
+  .twitter__container {
+    width: 95%;
+  }
+  .twitter__block {
+    flex-direction: column;
+  }
+  .twitter__block-text {
+    margin-left: 0;
+  }
+  .tweet-header-text {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .twitter__icon {
+    justify-content: space-around;
+  }
+}
