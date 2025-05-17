@@ -1,0 +1,18 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="svg_5_blur">
+   <feGaussianBlur stdDeviation="0" in="SourceGraphic"/>
+  </filter>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <path d="m171.92691,271.64307" id="svg_3" stroke="#000" fill="none"/>
+  <ellipse filter="url(#svg_5_blur)" stroke="#000" ry="58" rx="63" id="svg_5" cy="219.64308" cx="278.92692" fill="none"/>
+  <rect stroke="#000" id="svg_6" height="45" width="125" y="231.64308" x="216.92692" fill="none"/>
+  <rect id="svg_9" height="32" width="46" y="168.64308" x="153.92692" stroke="#000" fill="none"/>
+  <rect transform="rotate(-13.6871 196.927 216.143)" id="svg_10" height="63" width="32" y="184.64308" x="180.92692" stroke="#000" fill="none"/>
+  <ellipse ry="23.5" rx="23" id="svg_11" cy="250.14308" cx="206.92692" stroke="#000" fill="none"/>
+  <path id="svg_13" d="m341.92692,231.64308c42,-34 3,46 2.07308,45.35692c0.92692,0.64308 -13.07308,33.64308 -14,33c0.92692,0.64308 -22.07308,0.64308 -23,0c0.92692,0.64308 -5.07308,-31.35692 -6,-32c0.92692,0.64308 -50.07308,-1.35692 -51,-2" opacity="NaN" stroke="#000" fill="none"/>
+  <path stroke="#000" id="svg_14" d="m220.92692,277.98375l17.07308,34.01625l26,-1.05128l-10,-38.89744l-33,-42.05128" opacity="NaN" fill="none"/>
+ </g>
+</svg>
