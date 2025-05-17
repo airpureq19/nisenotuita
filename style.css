@@ -152,7 +152,7 @@ body {
 }
 
 /*----------------------------------------
-  レスポンシブ調整
+  レスポンシブ調整（600px以下）
 -----------------------------------------*/
 @media screen and (max-width: 600px) {
   .tweet-header h1 {
@@ -173,5 +173,40 @@ body {
   }
   .twitter__icon {
     justify-content: space-around;
+  }
+}
+
+/*----------------------------------------
+  さらに小さいスマホ（480px以下・縦画面用）の調整
+-----------------------------------------*/
+@media screen and (max-width: 480px) {
+  .tweet-header h1 {
+    font-size: 1em;
+  }
+  .header-logo {
+    width: 35px;
+    height: 35px;
+  }
+  .twitter__container {
+    width: 98%;
+    margin: 10px auto;
+  }
+  .twitter__block {
+    padding: 10px;
+  }
+  .tweet-header-text {
+    font-size: 0.85em;
+  }
+  .twitter__block-text .text {
+    font-size: 0.95em;
+  }
+  .twitter__icon span {
+    font-size: 0.85em;
+  }
+
+  /* スマホ縦画面ではタイムラインの高さも自動調整 */
+  .twitter__contents {
+    max-height: none;
+    padding: 5px 0;
   }
 }
